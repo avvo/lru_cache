@@ -4,15 +4,15 @@ defmodule LruCache.Mixfile do
 
   def project do
     [app: :lru_cache,
-     version: "0.1.0",
+     version: "0.1.1",
      elixir: "~> 1.2-dev",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps,
+     deps: deps(),
      name: "LRU Cache",
      source_url: @github,
-     description: description,
-     package: package]
+     description: description(),
+     package: package()]
   end
 
   def application do
@@ -20,8 +20,8 @@ defmodule LruCache.Mixfile do
   end
 
   defp deps do
-    [{:earmark, "~> 0.1", only: :dev},
-     {:ex_doc, "~> 0.11", only: :dev}]
+    [{:earmark, "~> 0.2", only: :dev},
+     {:ex_doc, "~> 0.12", only: :dev}]
   end
 
   defp description do
